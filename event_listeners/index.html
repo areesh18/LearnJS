@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sample text</h1>
+    <button onclick="alert('clicked')">Click me</button>
+    <!-- This way is not preferred, we will use addEventListeners in javascript to detect events like click, hover, drag etc -->
+    <button class="btn">Click</button>
+    <button class="light">Light</button>
+    <button class="dark">dark</button>
+    <script>
+        //select the button with class btn
+        const btn = document.querySelector('.btn');
+        /* btn.addEventListener("click", () => {
+            alert("btn clicked")
+        }) */
+
+        /* now suppose we want to change the text of the h1 tag on clicking of the btn button */
+        //select the h1
+        const h1text = document.querySelector("h1");
+        btn.addEventListener("click", () => {
+            h1text.innerText = "The text is changed"
+        })
+
+        //lets make a theme toggler switch
+        //select the body 
+        const body = document.querySelector("body");
+        //select both the buttons 
+        const lightbtn = document.querySelector(".light")
+        const darkbtn = document.querySelector(".dark")
+
+        //attach the click event listener
+        lightbtn.addEventListener("click", () => {
+            body.style.background = "white"
+            body.style.color = "black"
+        })
+        darkbtn.addEventListener("click", function() {//u can use normal function as well instead of arrow function.
+            body.style.background = "black"
+            body.style.color = "white"
+        })
+
+        //There are many eventlisteners, but the click is the most used and u just need to understand one of them to implement all others.
+    </script>
+</body>
+
+</html>
