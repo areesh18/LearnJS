@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div><!-- we will add dynamic elements in here -->
+    <button class="btn">Click</button>
+
+    <script>
+        //we will create elements dynamically on each button click
+        //.createElement is used to create new html elements through javascript
+        const btn = document.querySelector(".btn");
+        const container = document.querySelector(".container")
+        btn.addEventListener("click", () => {
+            const element = document.createElement("p");//u can also create any other elements like "h1" or a "button" or "li"
+            element.innerHTML = "Hi"
+            container.appendChild(element)
+        })
+        //so when u click the btn everytime, a new Hi p tag gets added to the container div
+    </script>
+</body>
+
+</html>
