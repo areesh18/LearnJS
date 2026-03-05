@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            color: blueviolet;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>hello guiz, welcome to this code.</nav>
+    <div class="random">
+        <h1>anything</h1>
+    </div>
+    <div class="yellow" id="instructions">
+        <h1>Follow the code, read the documentation</h1>
+    </div>
+    <div class="random">
+        <p>random text</p>
+    </div>
+    <h2>My name is <span>Areesh</span></h2>
+    <script>
+
+        //NOTE:try to comment and uncomment codes to see changes and exactly understand whats going on.
+
+
+        //we will change somethings using javascript, but first we need to undertsand how to grab or select what we will be changing.
+
+
+        //so we use 'queryselector' to select elements from the html and then change it using js code.
+
+        //lets select the body itself
+        const body = document.querySelector("body");
+        console.log(body);//see the console, the code inside body tag is printed there
+
+
+
+        //lets change the code inside the body tag and see how it changes the html
+
+
+        //Uncomment and see
+        /* body.innerHTML="<h1>Hacked, faaaahhhhh!</h1>" */
+        
+        //now see the preview in browser, all the above written html nav, h1, h2 all are gone and replaced with the Hacked, faaahhhh! h1 tag.
+
+
+
+
+        //lets supppose we want to select a div
+        const div = document.querySelector("div")
+        div.style.color = 'red'//changes the color of the first div in html to red, not the 2nd div tag.
+
+
+
+        //Suppose we have to select by class using queryselector:
+        const yellowDiv = document.querySelector(".yellow");
+        console.log(yellowDiv);//see in the console
+
+        //selecting by id using query selector:
+        const yellowDivByID = document.querySelector("#instructions");
+        console.log(yellowDivByID);
+        yellowDiv.style.color = 'yellow';
+
+
+        
+        //we can use document.getElementById to directly select elemetns by using their id assigned and not use any # as in querySelector
+        const instructions = document.getElementById("instructions")
+        instructions.style.color = "green";//color of the #instructions or .yellow div changes to green
+
+
+        //selecting by class names using getElementsByClassName
+
+        //suppose we have to change the backgroudn color of all the divs with class name "random"
+        const randoms = document.getElementsByClassName("random");
+        console.log(randoms)//u will see 2 divs in the console, as there are two divs above in the html with the class "random"
+
+        //we can use forloop to iterate
+        for (let i = 0; i < randoms.length; i++) {
+            randoms.item(i).style.background = "blue";//see how the background changes from nothing to blue
+        }
+
+        //we can also add and remove class to html elements:
+        const nav = document.querySelector("nav");
+        nav.classList.add("block")//see how the nav picks the css of the class "block"
+
+        nav.classList.remove("block")//class removed
+    </script>
+</body>
+
+</html>
